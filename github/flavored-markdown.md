@@ -40,7 +40,7 @@ For the same links used more than once or relative links:
 - [Number reference][1]
 - Same reference as a link [1]
 - As a footnote[^1]
-- [Relative reference to a repository file/dir](../../)
+- [Relative reference to a repository file/dir](../../../)
 ```
 
 **shows**
@@ -51,7 +51,7 @@ For the same links used more than once or relative links:
 - [Number reference][1]
 - Same reference as a link [1]
 - As a footnote[^1]
-- [Relative reference to a repository file/dir](../../)
+- [Relative reference to a repository file/dir](../../../)
 
 ## Diffs block
 
