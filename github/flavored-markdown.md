@@ -34,8 +34,8 @@ To escape parenthesis - use backslash:
 For the same links used more than once or relative links:
 
 ```md
-[1]: https://github.com/tsinis/tips-and-tricks/github
-[^1]: https://github.com/tsinis/tips-and-tricks/github
+[1]: https://github.com/tsinis/tips-and-tricks/tree/main/github
+[^1]: https://github.com/tsinis/tips-and-tricks/tree/main/github
 
 - [Number reference][1]
 - Same reference as a link [1]
@@ -45,8 +45,8 @@ For the same links used more than once or relative links:
 
 **shows**
 
-[1]: https://github.com/tsinis/tips-and-tricks/github
-[^1]: https://github.com/tsinis/tips-and-tricks/github
+[1]: https://github.com/tsinis/tips-and-tricks/tree/main/github
+[^1]: https://github.com/tsinis/tips-and-tricks/tree/main/github
 
 - [Number reference][1]
 - Same reference as a link [1]
@@ -70,6 +70,16 @@ For the same links used more than once or relative links:
 - Removed Line
 + Added Line
 ```
+
+## Keyboard tags
+
+```md
+Press <kbd>W</kbd> to go up, and <kbd>A</kbd> to go down.
+```
+
+**shows**
+
+Press <kbd>W</kbd> to go up, and <kbd>A</kbd> to go down.
 
 ## Colors
 
@@ -134,6 +144,18 @@ This sentence uses $\` and \`$ delimiters to show math inline: $`\sqrt{3x-1}+(1+
 ## Integrations
 
 ### [mermaid](https://github.com/mermaid-js/mermaid/blob/develop/README.md)
+
+```mermaid
+sequenceDiagram
+Alice->>John: Hello John, how are you?
+loop HealthCheck
+    John->>John: Fight against hypochondria
+end
+Note right of John: Rational thoughts!
+John-->>Alice: Great!
+John->>Bob: How about you?
+Bob-->>John: Jolly good!
+```
 
 ### geojson
 
