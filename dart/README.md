@@ -5,3 +5,4 @@
 - [Compile Time Constant Asserts](./compile-time-const-asserts/README.md)
 - [Compile Time Constant References](./compile-time-const-references/README.md)
 - [Model Class Purity](./model-class-purity/README.md)
+- [toString() overrides](./to-string-overrides/README.md)
