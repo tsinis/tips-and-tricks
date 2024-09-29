@@ -6,3 +6,4 @@
 - [Compile Time Constant References](./compile-time-const-references/README.md)
 - [Model Class Purity](./model-class-purity/README.md)
 - [toString() overrides](./to-string-overrides/README.md)
+- [BLoC UI Notifications](./bloc-ui-notifications/README.md)
