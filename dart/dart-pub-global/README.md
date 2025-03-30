@@ -16,7 +16,7 @@ dart pub global activate drift_dev 2.26.0
 dart pub global run drift_dev make-migrations
 ```
 
-> [!NOTE] Why this works:
+> **Why this works:**
 > It installs `drift_dev` outside your project's dependency tree, avoiding the local conflict. Crucially, `dart pub global` run still respects your project's local build.yaml configuration!
 
 Need another example? Here is the one to clean up dev_dependencies:
