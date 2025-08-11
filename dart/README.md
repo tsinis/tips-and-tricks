@@ -6,6 +6,7 @@
 - [Compile Time Constant Asserts](./compile-time-const-asserts/README.md)
 - [Compile Time Constant References](./compile-time-const-references/README.md)
 - [Dart Pub Global](./dart-pub-global/README.md)
+- [Extension Types](./extension-types/README.md)
 - [Model Class Purity](./model-class-purity/README.md)
 - [Never use DateTime.now()](./never-use-datetime-now/README.md)
 - [Pub.dev Experimental](./pub-dev-experimental/README.md)
