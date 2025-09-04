@@ -1,5 +1,6 @@
 ## Dart Tips And Tricks
 
+- [Annotations: A Practical Cheat Sheet](./annotations-cheat-sheet/README.md)
 - [BLoC UI Notifications](./bloc-ui-notifications/README.md)
 - [Better Tests](./better-tests/README.md)
 - [Code Cohesion](./code-cohesion/README.md)
