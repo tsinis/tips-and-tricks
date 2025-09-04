@@ -1,0 +1,30 @@
+include: package:lints/recommended.yaml
+
+analyzer:
+  language:
+    # Flag uses of generic types without explicit type arguments ("raw types").
+    # @optionalTypeArgs on a declaration explicitly allows omitting type args.
+    strict-raw-types: true
+    # Tighten inference to avoid implicit dynamic creeping in unrelated examples.
+    strict-inference: true
+
+linter:
+  rules:
+    # Powers @awaitNotRequired demo: warns when a Future's result is discarded
+    # (not awaited/handled). Suppressed by @awaitNotRequired.
+    discarded_futures: true
+    # Powers @reopen demo: warns when a subclass implicitly reopens a restricted
+    # supertype by not having a restrictive modifier. Suppressed by @reopen.
+    implicit_reopen: true
+
+dart_code_metrics:
+  rules:
+    # Powers @Throws demo: warns when a function that can throw is not annotated
+    # with @Throws, or when an annotated function does not throw. Suppressed by
+    # @Throws.
+    - handle-throwing-invocations: true
+    - prefer-correct-throws: true
+
+    # Powers @AcceptedTypes demo: warns when a function is called with arguments
+    # of types not listed in its @AcceptedTypes annotation. Suppressed by @AcceptedTypes.
+    - pass-correct-accepted-type: true
