@@ -94,7 +94,7 @@ class Dog extends Animal {
 }
 ```
 
-or [DartPad Example](https://gist.github.com/tsinis/177e62cfdac785c6129f627404bd2cd6)
+or [DartPad Example](https://dartpad.dev/?id=177e62cfdac785c6129f627404bd2cd6)
 
 > [!TIP]
 > Use `@override` even on fields when you intend to override implicit getters/setters. It catches mistakes early.
@@ -124,7 +124,7 @@ class FeatureState extends BaseState {
 }
 ```
 
-or [DartPad Example](https://gist.github.com/tsinis/6c19f6390461c716bc715b49b08e9339)
+or [DartPad Example](https://dartpad.dev/?id=6c19f6390461c716bc715b49b08e9339)
 
 > [!NOTE]
 > Works on getters/setters too — useful for enforcing checks during property overrides.
@@ -150,7 +150,7 @@ class LoggedInGuard extends RouteGuard {
 // class Missing extends RouteGuard {} // error: must override
 ```
 
-or [DartPad Example](https://gist.github.com/tsinis/dbd7cd40cf1b042cdde267130adfe7a5)
+or [DartPad Example](https://dartpad.dev/?id=dbd7cd40cf1b042cdde267130adfe7a5)
 
 > [!TIP]
 > This lets you keep the class concrete (instantiable) while still forcing customization where it matters.
@@ -170,7 +170,7 @@ class LoggerFactory {
 }
 ```
 
-or [DartPad Example](https://gist.github.com/tsinis/05d900047495d8b2adc1824eec66e206)
+or [DartPad Example](https://dartpad.dev/?id=05d900047495d8b2adc1824eec66e206)
 
 > [!NOTE]
 > This acts as a guardrail: if shared instances sneak in during refactors, the analyzer will nudge you back.
@@ -194,7 +194,7 @@ class Entity {
 }
 ```
 
-or [DartPad Example](https://gist.github.com/tsinis/55a672b2d832aba8a0d56a0e74b4d6cc)
+or [DartPad Example](https://dartpad.dev/?id=55a672b2d832aba8a0d56a0e74b4d6cc)
 
 > [!TIP]
 > Combine with `@mustCallSuper` on mutation points to tightly control state transitions.
@@ -218,7 +218,7 @@ void checkFlags() {
 }
 ```
 
-or [DartPad Example](https://gist.github.com/tsinis/75b40e6f85680ae6cf604e65f8eefa4c)
+or [DartPad Example](https://dartpad.dev/?id=75b40e6f85680ae6cf604e65f8eefa4c)
 
 > [!NOTE]
 > Overrides don't inherit this requirement — re‑annotate in subclasses to keep the contract.
@@ -238,7 +238,7 @@ extension type NonNegInt(int value) implements Comparable<int> {
 }
 ```
 
-or [DartPad Example](https://gist.github.com/tsinis/427fbd19ef50b18544a21e18adae903b)
+or [DartPad Example](https://dartpad.dev/?id=427fbd19ef50b18544a21e18adae903b)
 
 > [!TIP]
 > Helps tools keep your intent tied to interface changes across versions.
@@ -258,7 +258,7 @@ When: Implementation details, helpers, mini‑framework guts.
 class ParseCursor {/* ... */}
 ```
 
-or [DartPad Example](https://gist.github.com/tsinis/1ec2311b4fd7b9ee159ceb12d3024467)
+or [DartPad Example](https://dartpad.dev/?id=1ec2311b4fd7b9ee159ceb12d3024467)
 
 > [!TIP]
 > If downstream packages depend on `@internal` APIs, you'll see warnings during review — avoid accidental public contracts.
@@ -284,7 +284,7 @@ class UserBloc extends Bloc {
 // Outside library: Bloc().notify(); // warn
 ```
 
-or [DartPad Example](https://gist.github.com/tsinis/fb5cb02ccbf114f16c8eb738453cf833)
+or [DartPad Example](https://dartpad.dev/?id=fb5cb02ccbf114f16c8eb738453cf833)
 
 > [!NOTE]
 > Also prevents calling protected members on other instances outside the library.
@@ -305,7 +305,7 @@ class Parser {
 // Users: subclass Parser and override onToken; don't call it directly.
 ```
 
-or [DartPad Example](https://gist.github.com/tsinis/223b11ac287876493a03815f704d3796)
+or [DartPad Example](https://dartpad.dev/?id=223b11ac287876493a03815f704d3796)
 
 > [!TIP]
 > Pair with `@nonVirtual` on siblings you don't want changed to draw a crisp override surface.
@@ -323,7 +323,7 @@ When: Reset hooks, state peeks, determinism toggles.
 void resetSingletons() {/*...*/}
 ```
 
-or [DartPad Example](https://gist.github.com/tsinis/cb1f9c4311facfbd343ccbaaa61a0ce2)
+or [DartPad Example](https://dartpad.dev/?id=cb1f9c4311facfbd343ccbaaa61a0ce2)
 
 > [!TIP]
 > Public but "test‑scoped" intent — makes review faster by flagging accidental production calls.
@@ -346,7 +346,7 @@ class Point {
 }
 ```
 
-or [DartPad Example](https://gist.github.com/tsinis/801ff25832dac3ff87027de6276695b1)
+or [DartPad Example](https://dartpad.dev/?id=801ff25832dac3ff87027de6276695b1)
 
 > [!NOTE]
 > Subclasses must also be immutable. Mutability can't sneak in lower down.
@@ -369,7 +369,7 @@ class Tag {
 const a = Tag('alpha'); // canonical
 ```
 
-or [DartPad Example](https://gist.github.com/tsinis/4e0ca7cc77876bc84d3d958f5bf63eac)
+or [DartPad Example](https://dartpad.dev/?id=4e0ca7cc77876bc84d3d958f5bf63eac)
 
 > [!TIP]
 > Prevent accidental runtime allocation of something that should be const.
@@ -399,7 +399,7 @@ void example() {
 }
 ```
 
-or [DartPad Example](https://gist.github.com/tsinis/867339a96acc4355318ecf331a4f6007)
+or [DartPad Example](https://dartpad.dev/?id=867339a96acc4355318ecf331a4f6007)
 
 > [!TIP]
 > Great transitional tool when adding generics to pre‑generic APIs.
@@ -425,7 +425,7 @@ void main() {
 }
 ```
 
-or [DartPad Example](https://gist.github.com/tsinis/758cf11dec0ff5cbeff8c14798760f61)
+or [DartPad Example](https://dartpad.dev/?id=758cf11dec0ff5cbeff8c14798760f61)
 
 > [!NOTE]
 > You can annotate Future‑typed fields and top‑level variables too, not just functions.
@@ -450,7 +450,7 @@ final cachedTokenGood = stableUserId(); // No analyzer warning.
 final cachedTokenWrong = newCsrfToken(); // Warning: assignment_of_do_not_store
 ```
 
-or [DartPad Example](https://gist.github.com/tsinis/7e38e8e3246b97d92f7fdef628971a43)
+or [DartPad Example](https://dartpad.dev/?id=7e38e8e3246b97d92f7fdef628971a43)
 
 > [!TIP]
 > If a method passes through a `@doNotStore` value, annotate the pass‑through too to keep the contract alive.
@@ -474,7 +474,7 @@ void main() {
 }
 ```
 
-or [DartPad Example](https://gist.github.com/tsinis/cb59d35317b9e0c46f6db863cc3860a8)
+or [DartPad Example](https://dartpad.dev/?id=cb59d35317b9e0c46f6db863cc3860a8)
 
 > [!NOTE]
 > Useful in CI to catch "forgot to remove debug flag."
@@ -500,7 +500,7 @@ void main() {
 }
 ```
 
-or [DartPad Example](https://gist.github.com/tsinis/32e3c23f17e7fec603217cfafc431d88)
+or [DartPad Example](https://dartpad.dev/?id=32e3c23f17e7fec603217cfafc431d88)
 
 > [!TIP]
 > Use `UseResult.unless(parameterDefined: 'sink')` to allow "safe to ignore if you provided a sink/callback" patterns.
@@ -523,7 +523,7 @@ void it(String name, Future<void> Function() body) => test(name, body);
 void describe(String name, void Function() body) => group(name, body);
 ```
 
-or [DartPad Example](https://gist.github.com/tsinis/939d4618ae2e54441b09bf6ad2f82805)
+or [DartPad Example](https://dartpad.dev/?id=939d4618ae2e54441b09bf6ad2f82805)
 
 > [!NOTE]
 > Keep your expressive DSL and preserve tooling integration.
@@ -543,7 +543,7 @@ When: Replacing or removing APIs.
 void oldApi() {}
 ```
 
-or [DartPad Example](https://gist.github.com/tsinis/4eea5d99d88ab0408d069b0a37829975)
+or [DartPad Example](https://dartpad.dev/?id=4eea5d99d88ab0408d069b0a37829975)
 
 > [!TIP]
 > Deprecating at the library level cascades to members — one change can cover a broad surface.
@@ -561,7 +561,7 @@ When: Early designs, preview features.
 class NewRenderer {/*...*/}
 ```
 
-or [DartPad Example](https://gist.github.com/tsinis/fd0e5f061a7210747ca92fe516a725e3)
+or [DartPad Example](https://dartpad.dev/?id=fd0e5f061a7210747ca92fe516a725e3)
 
 > [!NOTE]
 > Combine with `@internal` to keep experiments visible inside your package without committing publicly.
@@ -579,7 +579,7 @@ When: Generated code, staged API stabilization.
 class Extensible {}
 ```
 
-or [DartPad Example](https://gist.github.com/tsinis/608851aa60a21e96cc87b533fb2ef59e)
+or [DartPad Example](https://dartpad.dev/?id=608851aa60a21e96cc87b533fb2ef59e)
 
 > [!TIP]
 > Useful when accepting constraints from superinterfaces but still allowing downstream extension.
@@ -600,7 +600,7 @@ void tracked() {/*...*/}
 // Calls to tracked() are recorded for tooling steps.
 ```
 
-or [DartPad Example](https://gist.github.com/tsinis/38dfa4dc5270374262398a0596c69c7e)
+or [DartPad Example](https://dartpad.dev/?id=38dfa4dc5270374262398a0596c69c7e)
 
 > [!NOTE]
 > Can be combined with `@mustBeConst` on select parameters to keep post‑compile data const‑safe.
@@ -618,7 +618,7 @@ When: VM entry points, interop boundaries, perf tuning.
 void keepMe() {}
 ```
 
-or [DartPad Example](https://gist.github.com/tsinis/d818a6c9e4bba7f8305db85b6ee4f42e)
+or [DartPad Example](https://dartpad.dev/?id=d818a6c9e4bba7f8305db85b6ee4f42e)
 
 > [!WARNING]
 > Pragmas are not general API annotations; they're instructions to specific tools/runtimes. For a deeper tour of VM pragmas, see Dart VM-Specific Pragma Annotations (mrale.ph) , and the general metadata overview on dart.dev .
