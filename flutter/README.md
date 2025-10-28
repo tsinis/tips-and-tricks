@@ -7,5 +7,6 @@
 - [Flutter SDK Sub-Class Widgets](./sdk-sub-class-widgets/README.md)
 - [Functional Widgets](./functional-widgets/README.md)
 - [Pixel Perfect Adaptive Designs](./pixel-perfect-adaptive-designs/README.md)
+- [SDK Localizations](./sdk-localizations/README.md)
 - [VS Code Tasks for Flutter](./vs-code-tasks/README.md)
 - [Virtual Environments](./virtual-environments/README.md)
