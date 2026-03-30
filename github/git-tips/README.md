@@ -93,3 +93,30 @@ git bisect reset
 dart compile exe bin/main.dart || exit 125
 dart test
 ```
+
+---
+
+## 3. git rerere
+
+`git rerere` ("reuse recorded resolution") remembers how you resolved merge conflicts and silently re-applies the same resolution next time. Enable it globally:
+
+```bash
+git config --global rerere.enabled true
+```
+
+### The gotcha
+
+If you resolve a conflict **incorrectly**, abort/undo the merge, and later retry the same merge — rerere silently re-applies the **wrong** resolution.
+
+How to fix it:
+
+```bash
+git rerere forget <path>    # forget resolution for a specific file
+git checkout -m <path>      # re-checkout the conflicted version to redo it
+```
+
+### Notes
+
+- Stored resolutions accumulate in `.git/rr-cache/` — negligible disk usage, cleaned by `git rerere gc`.
+- Historically had a GPG pin prompt issue, but fixed since Git 2.38.
+- **Verdict:** Safe to enable globally. Just remember — if you mess up a conflict resolution, run `git rerere forget .` before retrying.
