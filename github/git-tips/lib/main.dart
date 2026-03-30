@@ -11,3 +11,20 @@ String statusCategory(int code) {
 
 /// Returns true if the status code indicates success (2xx).
 bool isSuccess(int code) => statusCategory(code) == 'Success';
+
+/// Returns the standard reason phrase for common HTTP status codes.
+String reasonPhrase(int code) => switch (code) {
+      200 => 'OK',
+      201 => 'Created',
+      204 => 'No Content',
+      301 => 'Moved Permanently',
+      304 => 'Not Modified',
+      400 => 'Bad Request',
+      401 => 'Unauthorized',
+      403 => 'Forbidden',
+      404 => 'Not Found',
+      500 => 'Internal Server Error',
+      502 => 'Bad Gateway',
+      503 => 'Service Unavailable',
+      _ => 'Unknown',
+    };

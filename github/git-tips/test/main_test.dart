@@ -45,4 +45,16 @@ void main() {
       expect(isSuccess(500), isFalse);
     });
   });
+
+  group('reasonPhrase', () {
+    test('returns correct phrase for known codes', () {
+      expect(reasonPhrase(200), equals('OK'));
+      expect(reasonPhrase(404), equals('Not Found'));
+      expect(reasonPhrase(500), equals('Internal Server Error'));
+    });
+
+    test('returns Unknown for unrecognized codes', () {
+      expect(reasonPhrase(418), equals('Unknown'));
+    });
+  });
 }
