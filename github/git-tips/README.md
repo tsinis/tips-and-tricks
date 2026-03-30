@@ -1,16 +1,42 @@
-# git bisect run
+# Git Tips
 
-## Description
+## 1. .git-blame-ignore-revs
+
+When someone runs a bulk `dart format .` or a large refactor, every touched line shows them in `git blame` — hiding the real author. The fix: list those commit SHAs in `.git-blame-ignore-revs`, and blame skips them.
+
+```bash
+# Create the file, add formatting commit SHAs
+echo "161d3c698b0caef8822cb36d108ec89a2f80a14b" >> .git-blame-ignore-revs
+git config blame.ignoreRevsFile .git-blame-ignore-revs
+```
+
+### Example with this project
+
+This project has a formatting commit by `google-labs-jules[bot]` that reformatted all code to `page_width: 40`. Compare:
+
+```bash
+# Without ignore — Jules shows as author of reformatted lines
+git blame github/git-tips/lib/main.dart
+
+# With ignore — blame skips the formatting commit, shows real authors
+git blame --ignore-revs-file github/git-tips/.git-blame-ignore-revs github/git-tips/lib/main.dart
+```
+
+> **Note:** GitHub automatically recognizes `.git-blame-ignore-revs` at the repo root.
+
+---
+
+## 2. git bisect run
 
 `git bisect` uses binary search to find the commit that introduced a bug. Instead of manually marking commits as good/bad, `git bisect run` automates it — you give it a command (like `dart test`), and Git decides based on the exit code:
 
-| Exit code       | Meaning                                 |
-| --------------- | --------------------------------------- |
-| 0               | Good commit                             |
-| 1-124, 126, 127 | Bad commit                              |
-| 125             | Skip (can't test, e.g. doesn't compile) |
+| Exit code        | Meaning                                 |
+| ---------------- | --------------------------------------- |
+| 0                | Good commit                             |
+| 1–124, 126, 127  | Bad commit                              |
+| 125              | Skip (can't test, e.g. doesn't compile) |
 
-## Example with this project
+### Bisect example with this project
 
 This project has a deliberate bug introduced in one of its commits. You can find it automatically:
 
@@ -30,7 +56,7 @@ git bisect run sh -c 'cd github/git-tips && dart test test/main_test.dart'
 git bisect reset
 ```
 
-## Real-world example
+### Real-world example
 
 Say a test started failing at some point in your project. You'd do:
 
@@ -57,7 +83,7 @@ git bisect run dart test test/functional_status_codes_test.dart
 git bisect reset
 ```
 
-## Tips
+### Tips
 
 - The command you pass to `bisect run` can be anything — a test runner, a script, a linter.
 - For projects that don't compile on some commits, wrap your command in a script that returns 125 on build failure:
