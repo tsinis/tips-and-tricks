@@ -1,5 +1,7 @@
 # Git Tips
 
+[![No More Noisy Git Blame](./preview.jpeg)](https://github.com/tsinis/tips-and-tricks/blame/main/github/git-tips/lib/main.dart)
+
 ## 1. .git-blame-ignore-revs
 
 When someone runs a bulk `dart format .` or a large refactor, every touched line shows them in `git blame` — hiding the real author. The fix: list those commit SHAs in `.git-blame-ignore-revs`, and blame skips them.
@@ -33,7 +35,7 @@ git blame --ignore-revs-file github/git-tips/.git-blame-ignore-revs github/git-t
 | Exit code        | Meaning                                 |
 | ---------------- | --------------------------------------- |
 | 0                | Good commit                             |
-| 1–124, 126, 127  | Bad commit                              |
+| 1-124, 126, 127  | Bad commit                              |
 | 125              | Skip (can't test, e.g. doesn't compile) |
 
 ### Bisect example with this project
